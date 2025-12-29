@@ -1,0 +1,18 @@
+User Authentication:
+    Register / login / logout
+    Role-based access (admin vs customer)
+--------------------------------------------
+Products & Categories:
+    Admin can add/edit/delete products
+    Categories exist for filtering
+--------------------------------------------
+Cart & Checkout:
+    Add/remove products from cart
+    Place an order (even if payment is fake)
+--------------------------------------------
+Orders:
+    Store order details
+    Track order status
+
+Focus on routes for User Authentication first because that will be the most easiest to code of all here
+create the routes, hash passwords etc

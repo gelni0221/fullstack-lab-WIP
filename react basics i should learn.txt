@@ -1,0 +1,133 @@
+JSX syntax – how to write HTML-like code in JS
+https://www.w3schools.com/react/react_jsx.asp
+
+Components – function components (class components are optional)
+https://www.w3schools.com/react/react_components.asp
+
+Props – passing data to components
+https://www.w3schools.com/react/react_props.asp
+
+State – useState hook, how components store local info
+https://www.w3schools.com/react/react_usestate.asp
+
+Event handling – onClick, onChange, etc.
+https://www.w3schools.com/react/react_jsx_attributes.asp
+
+Conditional rendering – if/else, ternary in JSX
+https://www.w3schools.com/react/react_conditional_rendering.asp
+
+Lists & keys – rendering arrays of items
+https://www.w3schools.com/react/react_lists.asp
+
+Forms – controlled components for input fields
+https://www.w3schools.com/react/react_forms.asp
+
+Basic hooks – useState, useEffect
+https://www.w3schools.com/react/react_useeffect.asp
+
+React Router basics – navigating between pages
+https://www.w3schools.com/react/react_router.asp
+
+
+2-Week React Study Plan
+Week 1 — Core React Basics
+
+Day 1: JSX & Components
+
+Learn JSX syntax (HTML inside JS)
+JSX Syntax
+
+Learn function components
+Components
+
+Practice: create 2 simple components and render them.
+
+Day 2: Props & Passing Data
+
+Learn how to pass data from parent to child components
+Props
+
+Practice: create a product card component and pass data via props.
+
+Day 3: State & useState Hook
+
+Learn useState to store component data
+State / useState
+
+Practice: build a counter or toggle button.
+
+Day 4: Event Handling
+
+Learn onClick, onChange, etc.
+Event Handling
+
+Practice: make a button that updates state or logs input values.
+
+Day 5: Conditional Rendering
+
+Learn how to show/hide components based on conditions
+Conditional Rendering
+
+Practice: create a login/logout button that changes UI.
+
+Day 6: Lists & Keys
+
+Learn to render multiple items using map() and keys
+Lists & Keys
+
+Practice: render a list of products with unique keys.
+
+Day 7: Forms & Controlled Components
+
+Learn how to use React state for form inputs
+Forms
+
+Practice: create a login form with controlled inputs.
+
+Week 2 — Hooks, Effects, and Routing
+
+Day 8: useEffect Hook
+
+Learn useEffect for side effects like fetching data
+useEffect
+
+Practice: fetch data from an API and display it.
+
+Day 9: React Router Basics
+
+Learn navigation between pages
+React Router
+
+Practice: create Home, Products, and About pages with routing.
+
+Day 10: Mini Project — Product List Page
+
+Combine JSX, state, props, lists, and events
+
+Build a product list page with “Add to Cart” buttons (no backend yet)
+
+Day 11: Mini Project — Cart State
+
+Practice state management
+
+Clicking “Add to Cart” updates cart items in state
+
+Day 12: Mini Project — Conditional Rendering & Forms
+
+Add login simulation (conditional rendering)
+
+Add a checkout form (controlled inputs)
+
+Day 13: Mini Project — Fetch Products with useEffect
+
+Fetch product data from a mock API or JSON file
+
+Display products dynamically using state and lists
+
+Day 14: Review & Refactor
+
+Go through all mini-projects
+
+Make sure you understand state updates, props, events, conditional rendering, and routing
+
+Your React foundation is ready for a full e-commerce project

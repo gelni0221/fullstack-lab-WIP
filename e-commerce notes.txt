@@ -1,0 +1,145 @@
+full-featured online store with:
+    Customers buying products
+    Admin managing the store
+    Orders tracked from start to finish
+--------------------------------------------
+User Types:
+3 Roles
+--------------------------------------------
+Guest (Not Logged In):
+    Browse products
+    View product details
+    Search products
+    Register / login
+--------------------------------------------
+Customer (Logged In User):
+    Manage profile
+    Add products to cart
+    Place orders
+    View order history
+    Track order status
+--------------------------------------------
+Admin:
+    Manage products
+    Manage categories
+    Manage users
+    Manage orders
+    View dashboard statistics
+--------------------------------------------
+Authentication & User Management:
+    Register new users
+    Login / logout
+    Update profile (name, email, password)
+    Differentiate admin vs customer
+    Protect pages (only admin sees admin panel)
+    Important concepts
+    Password security
+    Session/JWT-based login
+    Role-based access
+--------------------------------------------
+Product Management:
+Admin can:
+    Add product
+    Edit product
+    Delete product
+    Upload product images
+
+Products have:
+    Name
+    Description
+    Price
+    Stock quantity
+    Category
+    Status (active / inactive)
+
+Admin creates categories (e.g. Electronics, Clothes):
+    Products belong to one category
+    Users can filter products by category
+--------------------------------------------
+Product Browsing:
+    Product listing page
+    Product detail page
+    Search by name
+    Filter by category
+    Sort by price (low → high, high → low)
+    Show stock availability
+--------------------------------------------
+Shopping Cart:
+    Add product to cart
+    Update quantity
+    Remove product
+    Cart persists (even after refresh or login)
+    Show subtotal, tax (optional), total
+--------------------------------------------
+Checkout System:
+    Collect shipping address
+    Review order summary
+    Confirm order
+    Reduce product stock after order
+    Generate order record
+--------------------------------------------
+Order Management:
+    Customer:
+    View order history
+    View order details
+    See order status
+
+Admin:
+    View all orders
+    Change order status:
+    Pending
+    Processing
+    Shipped
+    Delivered
+    Cancelled
+--------------------------------------------
+Admin Dashboard:
+    Total users
+    Total orders
+    Total revenue
+    Low-stock products
+    Recent orders
+--------------------------------------------
+Reviews & Ratings (Optional but Great):
+    What it should do
+    Customers can rate products
+    Leave reviews
+    Average rating displayed on product page
+    Admin can remove reviews
+--------------------------------------------
+Notifications (Optional)
+    Order placed confirmation
+    Order status updated
+    Low stock alert for admin
+--------------------------------------------
+Datas:
+    Users
+    Products
+    Categories
+    Cart items
+    Orders
+    Order items
+    Reviews
+--------------------------------------------
+Pages:
+
+Public Pages:
+    Home
+    Product list
+    Product detail
+    Login / Register
+
+Customer Pages:
+    Profile
+    Cart
+    Checkout
+    My Orders
+    Order Detail
+
+Admin Pages:
+    Dashboard
+    Product Management
+    Category Management
+    Order Management
+    User Management
+--------------------------------------------

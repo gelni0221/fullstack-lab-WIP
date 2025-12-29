@@ -1,0 +1,14 @@
+Features that i should focus on:
+User registration & login
+Password hashing (bcrypt)
+JWT authentication
+Role-based access (admin / user)
+Profile update
+Protected routes (frontend + backend)
+--------------------------------------------
+Tech Practice:
+Express middleware
+JWT & auth flow
+MySQL relationships
+React auth context / hooks
+API security basics
