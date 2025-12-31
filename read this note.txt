@@ -6,4 +6,5 @@ obviously not all but i gotta do what i gotta do i guess.
 
 hope i succeed lmao
 
+almost forgot but i will be using Nodejs, Express and Mysql Laragon for the backend and React for the frontend
 -N
