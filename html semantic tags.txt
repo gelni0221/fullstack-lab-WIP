@@ -1,0 +1,87 @@
+I used ai here to list all the semantic tags that i can use 
+ai is useful for stuff like this but i will give my best to not use ai in my code of course
+- N
+
+<!-- ====== DOCUMENT & MAIN STRUCTURE ====== -->
+<html></html>        <!-- Root of the HTML document -->
+<head></head>        <!-- Metadata container -->
+<body></body>        <!-- Visible page content -->
+
+<header></header>    <!-- Page or section header -->
+<nav></nav>          <!-- Primary navigation -->
+<main></main>        <!-- Main content (ONE per page) -->
+<section></section>  <!-- Thematic grouping with heading -->
+<article></article>  <!-- Self-contained content -->
+<aside></aside>      <!-- Tangential / sidebar content -->
+<footer></footer>    <!-- Page or section footer -->
+
+<!-- ====== HEADINGS & TEXT ====== -->
+<h1></h1> <h2></h2> <h3></h3> <h4></h4> <h5></h5> <h6></h6> <!-- Headings -->
+<p></p>              <!-- Paragraph -->
+<strong></strong>    <!-- Strong importance -->
+<em></em>            <!-- Emphasis -->
+<mark></mark>        <!-- Highlighted text -->
+<small></small>      <!-- Fine print -->
+<cite></cite>        <!-- Source of a quote or work -->
+<q></q>              <!-- Inline quote -->
+<blockquote></blockquote> <!-- Block quote -->
+<abbr title=""></abbr> <!-- Abbreviation -->
+<dfn></dfn>          <!-- Term definition -->
+
+<!-- ====== LISTS ====== -->
+<ul></ul>            <!-- Unordered list -->
+<ol></ol>            <!-- Ordered list -->
+<li></li>            <!-- List item -->
+<dl></dl>            <!-- Description list -->
+<dt></dt>            <!-- Term -->
+<dd></dd>            <!-- Description -->
+
+<!-- ====== MEDIA & EMBEDDED CONTENT ====== -->
+<img />              <!-- Image -->
+<figure></figure>    <!-- Self-contained media -->
+<figcaption></figcaption> <!-- Figure caption -->
+<audio></audio>      <!-- Audio -->
+<video></video>      <!-- Video -->
+<track />            <!-- Captions/subtitles -->
+
+<!-- ====== LINKS & REFERENCES ====== -->
+<a></a>              <!-- Anchor / link -->
+<address></address>  <!-- Contact information -->
+<time datetime=""></time> <!-- Date or time -->
+
+<!-- ====== FORMS ====== -->
+<form></form>        <!-- Form -->
+<label></label>      <!-- Input label -->
+<input />            <!-- Input field -->
+<textarea></textarea><!-- Multi-line input -->
+<button></button>    <!-- Button -->
+<select></select>    <!-- Dropdown -->
+<option></option>    <!-- Dropdown option -->
+<fieldset></fieldset><!-- Group form controls -->
+<legend></legend>    <!-- Fieldset caption -->
+<output></output>    <!-- Calculation result -->
+
+<!-- ====== TABLES ====== -->
+<table></table>      <!-- Table -->
+<caption></caption>  <!-- Table caption -->
+<thead></thead>      <!-- Table header group -->
+<tbody></tbody>      <!-- Table body group -->
+<tfoot></tfoot>      <!-- Table footer group -->
+<tr></tr>            <!-- Table row -->
+<th></th>            <!-- Header cell -->
+<td></td>            <!-- Data cell -->
+
+<!-- ====== INTERACTIVE & MISC ====== -->
+<details></details>  <!-- Expandable disclosure -->
+<summary></summary>  <!-- Details summary -->
+<dialog></dialog>    <!-- Modal / dialog box -->
+<progress></progress><!-- Progress indicator -->
+<meter></meter>      <!-- Scalar measurement -->
+
+<!-- ====== NON-SEMANTIC (USE AS LAST RESORT) ====== -->
+<div></div>          <!-- Generic block container -->
+<span></span>        <!-- Generic inline container -->
+
+If a tag describes what the content means, it’s semantic.
+If it just groups things → use <div> or <span>.
+

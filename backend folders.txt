@@ -1,0 +1,21 @@
+
+├── package.json           # Node project info
+├── server.js              # Main Express server entry
+├── .env                   # Environment variables (DB URI, secrets)
+│
+├── /routes                # Define your URLs
+│   ├── apiRoutes.js       # API routes (JSON responses)
+│   └── pageRoutes.js      # Optional: server-rendered pages
+│
+├── /controllers           # Logic for each route
+│   ├── userController.js
+│   └── dashboardController.js
+│
+├── /middlewares           # Middleware functions (auth, logging)
+│   └── authMiddleware.js
+│
+├── /models                # Database models
+│   └── User.js
+│
+├── /public                # Static files (images, CSS, JS)
+└── /views                 # Optional templates (EJS, Pug, etc.)

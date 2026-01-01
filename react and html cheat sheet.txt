@@ -1,0 +1,207 @@
+HTML & React Cheat Sheet (Plain Text)
+1️⃣ Links
+
+HTML Internal Link: <a href="/dashboard">Dashboard</a>
+
+HTML External Link: <a href="https://example.com" target="_blank" rel="noopener noreferrer">External Link</a>
+
+React SPA equivalent: <Link to="/dashboard">Dashboard</Link>
+
+Attributes:
+
+href → URL
+
+target="_blank" → open in new tab
+
+rel="noopener noreferrer" → security
+
+class / id → CSS or JS reference
+
+2️⃣ Buttons
+
+Normal Button: <button type="button">Click me</button>
+
+Submit Button: <button type="submit">Submit</button>
+
+React: use onClick in JSX instead of onclick
+
+Attributes:
+
+type → button, submit, reset
+
+class / id → styling or JS
+
+3️⃣ Images
+
+<img src="/images/logo.png" alt="Logo" width="100" height="50">
+
+Attributes:
+
+src → image URL/path
+
+alt → text if image fails
+
+width / height → size
+
+class / id → styling
+
+4️⃣ Forms & Inputs
+<form action="/login" method="POST">
+  <label for="email">Email:</label>
+  <input type="email" name="email" id="email" required>
+  
+  <label for="password">Password:</label>
+  <input type="password" name="password" id="password" required>
+  
+  <button type="submit">Login</button>
+</form>
+
+
+React equivalents:
+
+Use className instead of class
+
+Use htmlFor instead of for in <label>
+
+Controlled inputs: use value + onChange
+
+5️⃣ Containers
+
+<div> → block-level container
+
+<span> → inline container
+
+React: same tags, use className
+
+6️⃣ Lists
+
+Unordered List:
+
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+
+
+Ordered List:
+
+<ol>
+  <li>Step 1</li>
+  <li>Step 2</li>
+</ol>
+
+7️⃣ Headings & Paragraphs
+
+<h1> to <h6> → headings
+
+<p> → paragraph
+
+8️⃣ Semantic HTML
+
+<header> → top section
+
+<footer> → bottom section
+
+<nav> → navigation links
+
+<main> → main content
+
+<section> → content section
+
+<article> → independent content
+
+<aside> → sidebar / secondary content
+
+9️⃣ React-specific notes
+
+className instead of class
+
+htmlFor instead of for in labels
+
+Event handlers: onClick, onChange, onSubmit, etc.
+
+<Link to="/path"> instead of <a href="/path"> for SPA routing
+
+Controlled inputs: use value + onChange
+
+JSX attributes mostly camelCase (tabIndex, readOnly, maxLength)
+
+1️⃣ onClick
+
+What it is:
+
+A prop on JSX elements that listens for user interactions, usually clicks.
+
+Purpose:
+
+Run a function when the user clicks a button or element.
+
+Key points:
+
+Only runs when the event happens.
+
+Doesn’t store data by itself; usually updates state or triggers something.
+
+Example concept (no code needed):
+
+Click a “Login” button → call login function → maybe update user state.
+
+2️⃣ useState
+
+What it is:
+
+A React hook that lets your component remember values (state).
+
+Purpose:
+
+Store dynamic data that can change and cause the component to re-render.
+
+Key points:
+
+Returns a value and a function to update it.
+
+Updating the state automatically re-renders the component with the new value.
+
+Example concept:
+
+Track if the user is logged in (true/false).
+
+Track a counter that increases when a button is clicked.
+
+3️⃣ useEffect
+
+What it is:
+
+A React hook for side effects — things that happen outside of normal rendering, or in response to changes.
+
+Purpose:
+
+Run code when the component mounts, updates, or unmounts.
+
+Often used for: API calls, timers, subscriptions, updating the document title, or reacting to state changes.
+
+Key points:
+
+Doesn’t trigger from user clicks directly (unless the state changed by a click triggers it).
+
+Can run once, every render, or when specific variables change, depending on dependency array.
+
+Example concept:
+
+Fetch user data when the page loads.
+
+Log a message whenever a specific state changes.
+
+Quick Mental Map
+Thing	Type	Trigger	Purpose
+onClick	JSX prop	User clicks	Run a function on interaction
+useState	Hook	Manual via updater	Store dynamic data and re-render
+useEffect	Hook	Component mounts/updates	Run side effects automatically
+
+💡 Rule of thumb:
+
+Use onClick for user actions.
+
+Use useState to store/change data from those actions.
+
+Use useEffect when you want something to happen automatically when the component loads or when state/props change.

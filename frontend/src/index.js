@@ -9,3 +9,5 @@ root.render(
   </React.StrictMode>
 );
 
+// react NPM START
+// NODE JS NODE SERVER.JS
