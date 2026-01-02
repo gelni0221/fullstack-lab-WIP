@@ -46,7 +46,7 @@ export const Test1 = () => {
 // TERNARY OPERATOR I DID IT LOL I JUST CHANGED IT FROM THE TEST1
 export const Test2 = () => {
 
- let x = 1; 
+ let x = 0; 
 
   return (
   (isLoggedIn) ? <h1 className='welcome-text'>{(x) ==  0 ? "Welcome!" : "WELCOME!!"} </h1> : 
@@ -55,6 +55,36 @@ export const Test2 = () => {
     
   );
 };
+// YOU CAN PUT OTHER COMPONENTS IN A COMPONENT
+// ALSO PROPS
+export const Test3 = (props) => {
+  // WITH PROPS IT WILL BE return <Test3 name="Nigel!"/>;
+  // WITHOUT PROPS IT WILL BE return <Test3/>;
+  // i can put like this if many props will be needed, like in the res json??? me thinks
+//   const carInfo = {
+//   name: "Ford",
+//   model: "Mustang",
+//   color: "red",
+//   year: 1969
+// };
+// const carInfo = ["Ford", "Mustang"]; or in array 
+
+  return(
+  <>
+  <Test1/>
+  <Test2/>
+  <h1>{props.name}</h1>
+  </>
+  );
+}
+
+// USING DESTRUCTURING PROP ISTRUE WITH TERNARY OPERATOR INSIDE THE RETURN AND 2 COMPONENTS
+export const Test4 = ({isTrue}) => {
+
+  return(
+  <>{isTrue ? <Test1/> : <Test2/>}  </>
+  );
+}
 
 
 
