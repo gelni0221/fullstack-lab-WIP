@@ -131,3 +131,42 @@ Go through all mini-projects
 Make sure you understand state updates, props, events, conditional rendering, and routing
 
 Your React foundation is ready for a full e-commerce project
+
+What i should learn too:
+Advanced hooks:
+
+useReducer (state logic for complex apps)
+
+useContext (global state)
+
+useMemo, useCallback (performance optimization)
+
+useRef (DOM references & mutable values)
+
+Routing:
+
+react-router-dom for multi-page apps
+
+Forms & validation:
+
+Handling large forms and libraries like Formik or React Hook Form
+
+State management beyond basic hooks:
+
+Redux, Zustand, Recoil, MobX
+
+Code splitting and lazy loading
+
+Error boundaries
+
+Context + Hooks patterns
+
+Animations / transitions
+
+Testing (Jest, React Testing Library)
+
+Performance optimization for big apps
+
+Server-side rendering / Next.js
+
+TypeScript with React
