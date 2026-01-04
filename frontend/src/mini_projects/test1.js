@@ -161,7 +161,122 @@ export const Test7 = () => {
   );
 }
 
+function MyForm() {
+  const [name, setName] = useState("");
 
+  function handleChange(e) {
+    setName(e.target.value);
+  }
 
+  function handleSubmit(e) {
+    // prevents refresh
+    e.preventDefault();
+    alert(name);
+    // also this is where the CRUD logic goes
+  }
 
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>Enter your name:
+        <input
+          type="text" 
+          value={name}
+          onChange={handleChange}
+        />
+      </label>
+      <input type="submit" />
+    </form>
+  )
+}
 
+  // EXAMPLE OF THE ASYNC FUNC THAT USES EXPRESS
+//   async function handleSubmit(e) {
+//   e.preventDefault();
+
+//   if (!name) return;
+
+//   const res = await fetch("http://localhost:5000/api/users", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({ name }),
+//   });
+
+//   const newUser = await res.json();
+
+//   setUsers([...users, newUser]); // update UI from backend result
+//   setName("");
+// }
+
+export const Test8 = () => {
+  const [myCar, setMyCar] = useState(""); // selected car
+  const [cars, setCars] = useState([]);   // list of cars in UI
+
+  const handleChange = (event) => {
+    setMyCar(event.target.value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!myCar) return; // don't submit if nothing selected
+
+    try {
+      // send selected car to backend
+      const res = await fetch("http://localhost:3300/api/submit_car", {
+        method: "PATCH", // or POST if creating
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ myCar }),
+      });
+
+      const newCar = await res.json();
+
+      // update local state so UI shows new/updated car
+      // if updating an existing car, you could map and replace
+      // here we just add it for simplicity
+      setCars([...cars, newCar]);
+
+      // reset selection if you want
+      setMyCar("");
+    } catch (error) {
+      console.error("Error submitting car:", error);
+    }
+  };
+
+  return (
+    // THE FORM HAS THE ONSUBMIT AND THE HANDLE SUBMIT WHILE THE BUTTON ONLY HAS THE TYPE SUBMIT
+    <form onSubmit={handleSubmit}>
+      <select value={myCar} onChange={handleChange}>
+        <option value="" disabled>
+          Select a car
+        </option>
+        <option value="Mitsubishi">Mitsubishi</option>
+        <option value="Nissan">Nissan</option>
+        <option value="Volvo">Volvo</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+
+export const Login = () =>{
+const [inputs,setInputs] = useState({});
+
+  const handleChange = (e) =>{
+    const name = e.target.name;
+    const value = e.target.value;
+    setInputs(values => ({...values, [name]:value}))
+  }
+  
+  const handleSubmit = async (e) =>{
+    
+  }
+
+  return(
+    <form>
+
+    </form>
+
+  );
+}

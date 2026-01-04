@@ -1,0 +1,25 @@
+I need to create useState to store datas for the inputs
+To submit forms i need to make handleChange function to store the data from the inputs,options etc 
+handleChange basically the logic for the useState to work
+After that i need handleSubmit function in order to take the datas from the useState and use it for the CRUD
+i need to put type="submit" IN THE BUTTON
+and in the form onSubmit="handleSubmit"
+
+this means that like handleChange gets the datas and then i create handleSubmit, 
+and it will be the one that sends the data that it gets from the handleChange 
+but i will use the inputs from the useState right like inputs.lastname i will use in the 
+handleSubmit for post or patch  
+
+----------------------------------------------------------------------------
+
+useState → stores the data from your form inputs (text fields, selects, checkboxes, etc.)
+
+handleChange → updates the state as the user types/selects, so React always has the current form data
+
+This is what makes your inputs “controlled”
+
+handleSubmit → reads the state (useState) and uses it to send data to your backend (POST, PATCH, PUT, DELETE)
+
+type="submit" → the button triggers the form submission
+
+onSubmit={handleSubmit} → the form calls your handleSubmit function when submitted

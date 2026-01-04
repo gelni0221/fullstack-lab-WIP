@@ -1,0 +1,8 @@
+| Type       | Effect                                                                 |
+| ---------- | ---------------------------------------------------------------------- |
+| `text`     | Standard text input                                                    |
+| `number`   | Shows numeric keyboard on mobile, allows only numbers in some browsers |
+| `password` | Hides input characters                                                 |
+| `email`    | Performs basic email validation automatically                          |
+| `checkbox` | Renders a checkbox                                                     |
+| `radio`    | Renders a radio button                                                 |
