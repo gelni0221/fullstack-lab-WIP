@@ -1,0 +1,9 @@
+#000000
+
+#1A1A1A
+
+#eecc5dff
+
+#E0E0E0
+
+#FFFFFF

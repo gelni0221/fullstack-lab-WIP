@@ -1,5 +1,8 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import './Register.css'
+import {DateOfBirthSelector} from '../components/DOB_Selector.js'
+
+
 export const Register = () =>{
 const [inputs,setInputs] = useState({});
 
@@ -13,19 +16,81 @@ const [inputs,setInputs] = useState({});
     e.preventDefault();
     alert("THANK YOU");
   }
-
   return(
 <body>
 
     <form onSubmit={handleSubmit}>
-    <div>
-        <h1>Register</h1>
+      <div className="container">
+    <div className="register_div">
+        <h2>Create a new Account</h2>
+        <div className="row">
+        <label>
+          <input 
+          type="text"
+          name="firstname"
+          value={inputs.firstname}
+          onChange={handleChange}
+          placeholder='First Name'
+          />
+        </label>
+        <label>
+          <input 
+          type="text"
+          name="lastname"
+          value={inputs.lastname}
+          onChange={handleChange}
+          placeholder='Last Name'
+          />
+        </label>
+        </div>
+        <div className="row">
+        <p>Birthday:</p>
+        <DateOfBirthSelector/>
+        </div>
+        <div className="row">
+          <p>Gender:</p>
+          <label>
+          <span className="radio-button">Male
+          <input
+            type="radio"
+            name="gender"
+            value="Male"
+            onChange={handleChange}
+            checked={inputs.gender === "Male"}
+          />
+          </span>
+        </label>
+        <label>
+          <span className="radio-button">Female
+          <input
+            type="radio"
+            name="gender"
+            value="Female"
+            onChange={handleChange}
+            checked={inputs.gender === "Female"}
+          />
+          </span>
+        </label>
+        <label>
+          <span className="radio-button">Custom
+          <input
+            type="radio"
+            name="gender"
+            value="Others"
+            onChange={handleChange}
+            // MAYBE FUNCTION IN CHECKED TO CREATE A NEW INPUT WHERE I PUT THE CUSTOM PRONOUN
+            // checked={}
+          />
+          </span>
+        </label>
+        </div>
         <label>
           <input 
           type="text"
           name="username"
           value={inputs.username}
           onChange={handleChange}
+          placeholder='Username'
           />
         </label>
         <label>
@@ -34,9 +99,11 @@ const [inputs,setInputs] = useState({});
           name="password"
           value={inputs.password}
           onChange={handleChange}
+          placeholder='New Password'
           />
         </label>
-        <button type="submit"></button>
+        <button className="form_submit" type="submit">Confirm</button>
+    </div>
     </div>
     </form>
 
