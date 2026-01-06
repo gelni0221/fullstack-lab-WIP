@@ -7,7 +7,7 @@ body{
     display: flex ;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 70vh;
     padding: 1rem;
 }
 .register_div{
@@ -74,7 +74,26 @@ input{
   margin-right: 8px;
 }
 
-
 span{
     margin: .5rem;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+font-size: clamp(1.5rem, 5vw, 3rem); 
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+p{
+    margin: 0;
+    margin-bottom: 1rem;
+}
+h2{
+    margin: 0;
+    margin-bottom: .5rem;
 }

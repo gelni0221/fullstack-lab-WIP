@@ -4,7 +4,17 @@ import {DateOfBirthSelector} from '../components/DOB_Selector.js'
 
 
 export const Register = () =>{
-const [inputs,setInputs] = useState({});
+const [inputs,setInputs] = useState({
+  firstname: '',
+  lastname: '',
+  gender: '',
+  username: '',
+  password: ''
+
+});
+const [year, setYear] = useState("");
+  const [month, setMonth] = useState("");
+  const [day, setDay] = useState("");
 
   const handleChange = (e) =>{
     const name = e.target.name;
@@ -14,15 +24,19 @@ const [inputs,setInputs] = useState({});
   
   const handleSubmit = async (e) =>{
     e.preventDefault();
-    alert("THANK YOU");
+    //CLIENT SIDE VALIDATION
+    //ALSO THE POST FOR THE NODE JS EXPRESS ROUTE HERE
+    // WILL WORK ON THAT NOW
   }
-  return(
-<body>
 
+  return(
     <form onSubmit={handleSubmit}>
+      <div className="title" ><h1>E-Commerce Website</h1></div>
       <div className="container">
+        
     <div className="register_div">
         <h2>Create a new Account</h2>
+        <p>at your service.</p>
         <div className="row">
         <label>
           <input 
@@ -45,7 +59,14 @@ const [inputs,setInputs] = useState({});
         </div>
         <div className="row">
         <p>Birthday:</p>
-        <DateOfBirthSelector/>
+        <DateOfBirthSelector
+          year={year}
+          setYear={setYear}
+          month={month}
+          setMonth={setMonth}
+          day={day}
+          setDay={setDay}
+        />
         </div>
         <div className="row">
           <p>Gender:</p>
@@ -102,12 +123,10 @@ const [inputs,setInputs] = useState({});
           placeholder='New Password'
           />
         </label>
-        <button className="form_submit" type="submit">Confirm</button>
+        <button className="form_submit" type="submit">Sign Up</button>
+        <a href="">Already have an account?</a>
     </div>
     </div>
     </form>
-
-</body>
-
   );
 }

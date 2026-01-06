@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
-export const DateOfBirthSelector = () => {
+export const DateOfBirthSelector = (props) => {
+  const { year, setYear, month, setMonth, day, setDay } = props;
+
   const currentYear = new Date().getFullYear();
-  
-
   const years = Array.from({ length: 100 }, (_, i) => currentYear - i);
 
   const months = [
@@ -11,56 +11,50 @@ export const DateOfBirthSelector = () => {
     "July", "August", "September", "October", "November", "December"
   ];
 
-  const [selectedYear, setSelectedYear] = useState("");
-  const [selectedMonth, setSelectedMonth] = useState("");
   const [days, setDays] = useState([]);
-  const [selectedDay, setSelectedDay] = useState("");
-
 
   useEffect(() => {
-    if (selectedYear && selectedMonth !== "") {
-      const monthIndex = months.indexOf(selectedMonth);
-
-      const numDays = new Date(selectedYear, monthIndex + 1, 0).getDate();
-
+    if (year && month !== "") {
+      const monthIndex = months.indexOf(month);
+      const numDays = new Date(year, monthIndex + 1, 0).getDate();
       setDays(Array.from({ length: numDays }, (_, i) => i + 1));
 
-      if (selectedDay > numDays) setSelectedDay("");
+      if (day > numDays) setDay("");
     }
-  }, [selectedMonth, selectedYear]);
+  }, [month, year]);
 
   return (
     <div className="dob-selector">
       <select
-        value={selectedMonth}
-        onChange={(e) => setSelectedMonth(e.target.value)}
+        value={month}
+        onChange={(e) => setMonth(e.target.value)}
       >
-        {months.map((month) => (
-          <option key={month} value={month}>{month}</option>
+        <option value="">Month</option>
+        {months.map((m) => (
+          <option key={m} value={m}>{m}</option>
         ))}
       </select>
 
       <select
-        value={selectedDay}
-        onChange={(e) => setSelectedDay(e.target.value)}
-        disabled={!selectedMonth || !selectedYear}
+        value={day}
+        onChange={(e) => setDay(e.target.value)}
+        disabled={!month || !year}
       >
         <option value="">Day</option>
-        {days.map((day) => (
-          <option key={day} value={day}>{day}</option>
+        {days.map((d) => (
+          <option key={d} value={d}>{d}</option>
         ))}
       </select>
 
       <select
-        value={selectedYear}
-        onChange={(e) => setSelectedYear(e.target.value)}
+        value={year}
+        onChange={(e) => setYear(e.target.value)}
       >
         <option value="">Year</option>
-        {years.map((year) => (
-          <option key={year} value={year}>{year}</option>
+        {years.map((y) => (
+          <option key={y} value={y}>{y}</option>
         ))}
       </select>
     </div>
   );
-}
-
+};
