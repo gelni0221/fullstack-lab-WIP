@@ -1,0 +1,27 @@
+1️⃣ Success (2xx)
+Code	Meaning
+200 OK	The request succeeded and the server is returning the data. Most common success response.
+201 Created	A new resource was created successfully (common in POST requests).
+204 No Content	Request succeeded but there is no content to return (often for DELETE requests).
+
+2️⃣ Redirection (3xx)
+Code	Meaning
+301 Moved Permanently	Resource has permanently moved to a new URL (used for URL redirects).
+302 Found (Temporary Redirect)	Resource temporarily available at a different URL.
+304 Not Modified	Used with caching: the resource hasn’t changed since last request.
+
+3️⃣ Client Errors (4xx)
+Code	Meaning
+400 Bad Request	Request is malformed or invalid.
+401 Unauthorized	Client must authenticate (login required).
+403 Forbidden	Client is authenticated but does not have permission.
+404 Not Found	Resource could not be found. Most common error on the web.
+409 Conflict	Often used if a resource already exists (like duplicate username).
+422 Unprocessable Entity	Used when the request is valid but fails validation (common in APIs).
+
+4️⃣ Server Errors (5xx)
+Code	Meaning
+500 Internal Server Error	Generic server error. Something went wrong on the server.
+502 Bad Gateway	Server received an invalid response from another server.
+503 Service Unavailable	Server is temporarily unavailable (overloaded or down for maintenance).
+504 Gateway Timeout	Server did not get a timely response from another server.
