@@ -1,0 +1,11 @@
+// middleware/validateUserInputs.js
+// Middleware functions run **before your controllers**.
+// Purpose: validate inputs, check auth, log requests, or do pre-processing.
+// Receives: req, res, next
+// Usually imports: 
+// - Models (if you need to check DB, e.g., User.findOne)
+// - Libraries for validation (e.g., bcrypt, zod, express-validator)
+// - Optional: other utils
+
+// Example use:
+router.post('/register', validateUserInputs, registerController);

@@ -1,0 +1,14 @@
+Client Request → Route → Middleware → Controller → Model → Database → Response
+
+req.body      // for POST/PUT
+req.query     // for GET query parameters
+req.params    // for route parameters like /user/:id
+
+
+You have 3 layers of data security that you should implement:
+
+UI validation is because users will be users
+
+API validation because hackers will be hackers
+
+DB validation, because data integrity is important, and developers will be developers

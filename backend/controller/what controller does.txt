@@ -1,0 +1,9 @@
+// controllers/userController.js
+// Controllers implement **business logic** for your routes.
+// Purpose: take validated inputs from middleware, call models to read/write DB, return response.
+// Usually imports:
+// - Models (to read/write DB)
+// - Utilities like bcrypt, JWT, etc.
+// - Libraries for formatting, sending emails, etc.
+
+// Example: create a user, hash password, save via model

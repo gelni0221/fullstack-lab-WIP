@@ -61,6 +61,9 @@ input{
     justify-content: center;
     text-align: center;
 }
+.dob-selector p {
+  align-self: center; 
+}
 
 .radio-button {
   display: inline-block;
@@ -91,7 +94,6 @@ font-size: clamp(1.5rem, 5vw, 3rem);
 
 p{
     margin: 0;
-    margin-bottom: 1rem;
 }
 h2{
     margin: 0;

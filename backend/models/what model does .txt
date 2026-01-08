@@ -1,0 +1,10 @@
+// models/User.js
+// Models represent **database tables** and handle **all DB queries**.
+// Purpose: abstract the database logic
+// Usually imports:
+// - DB connection (mysql2, Sequelize, etc.)
+// - Optional: helper libraries (e.g., bcrypt for password hashing)
+
+// Example:
+// User.findOne({ email })
+// User.create({ first_name, last_name, email, password })

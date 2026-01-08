@@ -1,0 +1,10 @@
+// routes/userRoutes.js
+// Defines your API endpoints (URLs) and attaches middleware + controllers.
+// Purpose: map URL paths to functions
+// Usually imports: 
+// - express.Router()
+// - Controllers (to handle business logic)
+// - Middleware (to validate/auth/check requests)
+
+// Example:
+router.post('/register', validateUserInputs, checkUserExists, registerController);

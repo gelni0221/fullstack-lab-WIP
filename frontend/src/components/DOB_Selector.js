@@ -24,7 +24,8 @@ export const DateOfBirthSelector = (props) => {
   }, [month, year]);
 
   return (
-    <div className="dob-selector">
+    <div className="dob-selector">  
+      <p>Birthday:</p>
       <select
         value={month}
         onChange={(e) => setMonth(e.target.value)}

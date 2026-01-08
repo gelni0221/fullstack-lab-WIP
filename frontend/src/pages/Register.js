@@ -57,8 +57,7 @@ const [year, setYear] = useState("");
           />
         </label>
         </div>
-        <div className="row">
-        <p>Birthday:</p>
+        <div>
         <DateOfBirthSelector
           year={year}
           setYear={setYear}
@@ -69,8 +68,8 @@ const [year, setYear] = useState("");
         />
         </div>
         <div className="row">
-          <p>Gender:</p>
           <label>
+            Gender:
           <span className="radio-button">Male
           <input
             type="radio"
