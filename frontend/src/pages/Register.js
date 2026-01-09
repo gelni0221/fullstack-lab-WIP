@@ -27,6 +27,7 @@ const [year, setYear] = useState("");
     //CLIENT SIDE VALIDATION
     //ALSO THE POST FOR THE NODE JS EXPRESS ROUTE HERE
     // WILL WORK ON THAT NOW
+    console.log(day);
   }
 
   return(
