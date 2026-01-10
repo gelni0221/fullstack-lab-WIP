@@ -1,0 +1,59 @@
+import {createPortal} from 'react-dom';
+import {useState} from 'react';
+
+const Modal = ({isOpen, onClose, children}) =>{
+    if (!isOpen) return null;
+        
+    return createPortal(
+    <div style={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+      
+    }}>
+        <div style={{
+            backgroundColor: 'white',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'column',
+            margin: '1rem',
+            padding:'1rem'
+        }}>
+        <h1>Hello</h1>
+        {children}
+        <button onClick={onClose}>Close</button>
+        </div>
+    </div>,
+    document.body
+    );
+}
+
+export const PortalExample = () =>{
+    const [isOpen, setIsOpen] = useState(false);
+    return(
+        <div style={{
+            backgroundColor: 'white',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'column',
+                        margin: '1rem',
+            gap: '1rem'
+        }}>
+        <h1>Test Portal</h1>
+        <button onClick={() => setIsOpen(true)}>Open Modal</button>
+
+        <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <h1>Modal Is Open Now!</h1>
+        </Modal>
+        </div>
+
+    );
+}
