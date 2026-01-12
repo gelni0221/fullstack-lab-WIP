@@ -12,7 +12,7 @@ const [inputs,setInputs] = useState({
   password: ''
 
 });
-const [year, setYear] = useState("");
+  const [year, setYear] = useState("");
   const [month, setMonth] = useState("");
   const [day, setDay] = useState("");
 
@@ -24,10 +24,11 @@ const [year, setYear] = useState("");
   
   const handleSubmit = async (e) =>{
     e.preventDefault();
+
     //CLIENT SIDE VALIDATION
     //ALSO THE POST FOR THE NODE JS EXPRESS ROUTE HERE
     // WILL WORK ON THAT NOW
-    console.log(day);
+
   }
 
   return(

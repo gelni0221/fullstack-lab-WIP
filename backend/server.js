@@ -1,10 +1,23 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
-
+const cors = require('cors');
+const helmet = require('helmet');
+const cookieParser = require('cookie-parser');
+const jwt = requie('jsonwebtoken');
 require('dotenv').config();
+
+const secret = process.env.JWT_SECRET
 const NODE_PORT = process.env.NODE_PORT || 5000;    
 
+// Makes it that the React can only use the backend.
+app.use(cors({
+    origin:"http://localhost:3000",
+    credentials: true
+}));
+// Add security headers
+app.use(helmet());
+app.use(cookieParser());
 // Middleware to parse JSON request bodies - to make the data in json instead of like a string
 app.use(express.json());
 
@@ -17,15 +30,11 @@ app.use(express.static('public'));
 // THIS MIDDLEWARE IS TO MAKE A CONSOLE LOG THAT SHOWS SOMEONE USED A ROUTE
 app.use(morgan('combined'));
 
-
 // INSTEAD OF THIS
 // app.use((req, res, next) => {
 //   console.log('Users Router Time:', Date.now());
 //   next();
 // });
-
-
-
 
 
 app.listen(NODE_PORT, () => {

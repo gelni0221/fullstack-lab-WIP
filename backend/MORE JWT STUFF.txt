@@ -1,0 +1,62 @@
+Login/Register routes = Public (no authenticate)
+User data/actions routes = Protected (use authenticate)
+
+Already logged in? → Use authenticate middleware
+Not logged in yet? → No authenticate middleware
+
+Examples:
+Routes WITHOUT authenticate (Public - anyone can access):
+javascriptrouter.post('/login', ...)        // Logging in
+router.post('/register', ...)     // Creating account
+router.get('/about', ...)         // Public info
+router.get('/products', ...)      // Browse products
+
+
+Routes WITH authenticate (Protected - must be logged in):
+javascriptrouter.get('/profile', authenticate, ...)           // Your profile
+router.put('/update-profile', authenticate, ...)    // Edit profile
+router.post('/logout', authenticate, ...)           // Logout
+router.get('/my-orders', authenticate, ...)         // Your orders
+router.post('/create-post', authenticate, ...)      // Create content
+router.delete('/delete-account', authenticate, ...) // Delete account
+
+-------------------------------------------------------
+
+IN THE LOGIN ROUTE WHERE I NEED TO CREATE A TOKEN   
+-- TOKEN IS CREATED HERE 
+    const token = jwt.sign(
+      { id: user._id, email: user.email },  // Data you want in the token
+      process.env.JWT_SECRET,                // Secret key from .env
+      { expiresIn: '24h' }                   // Token expires in 24 hours
+    );
+
+-- Store token in httpOnly cookie
+    res.cookie('token', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+      maxAge: 24 * 60 * 60 * 1000
+    });
+
+-------------------------------------------------------
+
+-- FOR EVERY SINGLE FETCH REQUEST I ADD
+credentials: 'include'
+
+so basically
+const data = {
+  email,
+  password,
+  firstName,
+  lastName,
+  age,
+  address,
+  phoneNumber
+};
+
+method: '',
+headers: {'Content-type': 'application/json'},
+credentials: 'include',
+body: JSON.stringify({data})
+
+i can create object if many variables elseSON.stringify({username, password})

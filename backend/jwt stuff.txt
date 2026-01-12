@@ -1,0 +1,35 @@
+Notes about JWT storage
+
+Option 1: Store JWT in localStorage or sessionStorage
+
+No credentials: true needed.
+
+No cookie parser needed.
+
+But vulnerable to XSS if your frontend is compromised.
+
+**Option 2: Store JWT in HTTP-only cookie
+
+Use res.cookie("token", jwt, { httpOnly: true, sameSite: "lax" })
+
+Browser automatically sends it with requests.
+
+Safer from XSS, but now you need:
+
+CORS with credentials: true
+
+cookie-parser on backend
+
+credentials: "include" in frontend fetch/axios
+
+✅ For most secure apps, HTTP-only cookies are recommended.
+
+If you want, I can make a complete JWT signup/login flow showing exactly:
+
+Signup → JWT creation → store in cookie
+
+Login → issue JWT
+
+Frontend fetch requests with credentials: "include"
+
+Protected routes using JWT verification
