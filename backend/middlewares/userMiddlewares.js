@@ -139,8 +139,7 @@ export async function validateUserInputs(req, res, next){
             const month_num = monthNameToNumber(month);
             const day_padded = String(dayNum).padStart(2,"0");
             const date = `${yearNum}-${month_num}-${day_padded}`;
-
-            
+           
     next();
     }
     catch(err){
