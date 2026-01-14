@@ -1,6 +1,6 @@
-const bcrypt = require('bcrypt');
-const { getOneUsername } = require('../models/userModels');
-import bcrypt from "bcrypt";
+import bcrypt from 'bcrypt';
+import { getOneUsername, insertUserAccount } from '../models/userModels.js';
+
 
 async function hashPassword(password){
 const saltRounds = 10;
@@ -59,7 +59,9 @@ const monthNameToNumber = (month) => {
         case "December":
         month_num = "12";
         break;
-    }};
+    }
+        return month_num;
+    };
  
 
 const valid_months = [
@@ -67,9 +69,9 @@ const valid_months = [
     "July", "August", "September", "October", "November", "December"
     ];
 
-export async function validateUserInputs(req, res, next){
-        const {first_name, 
-                last_name,
+export default async function validateUserInputs(req, res, next){
+        const {firstname, 
+                lastname,
                 gender,
                 username,   
                 password,
@@ -91,10 +93,10 @@ export async function validateUserInputs(req, res, next){
         const name_regex = /^[A-Za-z]+([-' ][A-Za-z]+)*$/;
 
         try{
-            if (!first_name || !last_name || !gender || !username || !password || !month || !day || !year){
+            if (!firstname || !lastname || !gender || !username || !password || !month || !dayNum || !yearNum){
                 return res.status(400).json({ error:"Please fill up all the fields "});
             }
-            else if(validate_acc.length > 0){
+            else if(validate_acc){
                 return res.status(409).json({error: "Username already exists!"});
             }
             else if(username.length < 6 || username.length > 12){
@@ -130,17 +132,17 @@ export async function validateUserInputs(req, res, next){
             else if(!valid_months.includes(month)){
                 return res.status(400).json({error: "Please select a valid Month."})
             }
-            else if(!name_regex.test(first_name.trim()) || !name_regex.test(last_name.trim())){
+            else if(!name_regex.test(firstname.trim()) || !name_regex.test(lastname.trim())){
                 return res.status(400).json({error: "Name can only contain letters, optional hyphens or apostrophes, and must be 1–50 characters long"})
             }
 
-            const fullname = `${first_name.trim()} ${last_name.trim()}`;
+            const fullname = `${firstname.trim()} ${lastname.trim()}`;
             const hash_password = await hashPassword(password);
             const month_num = monthNameToNumber(month);
             const day_padded = String(dayNum).padStart(2,"0");
             const date = `${yearNum}-${month_num}-${day_padded}`;
-           
-    next();
+            const result = await insertUserAccount(fullname,username,hash_password,gender,date);
+            res.status(201).json({success: true, user: result});
     }
     catch(err){
         console.error(err.message);

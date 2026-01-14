@@ -1,7 +1,7 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useMemo} from 'react';
 import './Register.css'
 import {DateOfBirthSelector} from '../components/DOB_Selector.js'
-
+const URL = process.env.REACT_APP_API_URL
 
 export const Register = () =>{
 const [inputs,setInputs] = useState({
@@ -16,6 +16,11 @@ const [inputs,setInputs] = useState({
   const [month, setMonth] = useState("");
   const [day, setDay] = useState("");
 
+  // idk how this works need to learn date rn 01/14/26
+const combined = useMemo(() => {
+  return { ...inputs, year, month, day };
+}, [inputs, year, month, day]);
+
   const handleChange = (e) =>{
     const name = e.target.name;
     const value = e.target.value;
@@ -24,11 +29,14 @@ const [inputs,setInputs] = useState({
   
   const handleSubmit = async (e) =>{
     e.preventDefault();
-
-    //CLIENT SIDE VALIDATION
-    //ALSO THE POST FOR THE NODE JS EXPRESS ROUTE HERE
-    // WILL WORK ON THAT NOW
-
+    const response = await fetch(`${URL}/user/api/v1/register`,{
+      method:'POST',
+      headers:{'Content-type': 'application/json'},
+      credentials: 'include',
+      body: JSON.stringify(combined)
+    });
+    const data = await response.json();
+    console.log(data);
   }
 
   return(

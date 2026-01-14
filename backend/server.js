@@ -1,11 +1,12 @@
-const express = require('express');
+import express from 'express';
+import morgan from 'morgan';
+import cors from 'cors';
+import helmet from 'helmet';
+import cookieParser from 'cookie-parser';
+import dotenv from 'dotenv';
+import userRoutes from './routes/userRoutes.js'; 
+dotenv.config();
 const app = express();
-const morgan = require('morgan');
-const cors = require('cors');
-const helmet = require('helmet');
-const cookieParser = require('cookie-parser');
-const jwt = requie('jsonwebtoken');
-require('dotenv').config();
 
 const secret = process.env.JWT_SECRET
 const NODE_PORT = process.env.NODE_PORT || 5000;    
@@ -35,6 +36,7 @@ app.use(morgan('combined'));
 //   console.log('Users Router Time:', Date.now());
 //   next();
 // });
+app.use('/user', userRoutes);
 
 
 app.listen(NODE_PORT, () => {

@@ -1,12 +1,9 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const {validateUserInputs} = require('../middlewares/userMiddlewares');
+import validateUserInputs from '../middlewares/userMiddlewares.js';
 
 
-router.post('/api/v1/register', validateUserInputs, async (req, res) =>{
-
-    
-});
+router.post('/api/v1/register', validateUserInputs, async (req, res) =>{});
 
 
-module.exports = router; 
+export default router;
