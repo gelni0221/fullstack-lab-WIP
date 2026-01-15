@@ -32,3 +32,4 @@ export async function updateUserAccount(fullname,username,hashed_password,gender
     console.log(result.affectedRows);
     return result;
 }
+

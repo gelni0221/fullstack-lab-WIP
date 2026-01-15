@@ -1,5 +1,5 @@
 import {createPortal} from 'react-dom';
-import {useState} from 'react';
+import {useState, Suspense} from 'react';
 
 const Modal = ({isOpen, onClose, children}) =>{
     if (!isOpen) return null;
@@ -33,7 +33,7 @@ const Modal = ({isOpen, onClose, children}) =>{
     </div>,
     document.body
     );
-}
+};
 
 export const PortalExample = () =>{
     const [isOpen, setIsOpen] = useState(false);
@@ -56,4 +56,13 @@ export const PortalExample = () =>{
         </div>
 
     );
-}
+};
+// YOU USE SUSPENSE IF A COMPONENT TAKES A LITTLE BIT OF TIME TO LOAD WHEN YOU IMPORT IT SO YOU PUT A PLACEHOLDER IN ITS PLACE
+export const SuspenseExample = () =>{
+return(
+    <div>
+        <Suspense fallback={<h1>Loading... </h1>}>
+        </Suspense>
+    </div>
+);
+};
