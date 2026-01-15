@@ -1,0 +1,23 @@
+| Category                          | Feature                        | Status     | Notes / Recommendations                                                      |
+| --------------------------------- | ------------------------------ | ---------- | ---------------------------------------------------------------------------- |
+| **Security (Express middleware)** | Helmet                         | ✅ Have     | Security headers; consider CSP config for React.                             |
+|                                   | CORS                           | ✅ Have     | Only allow your frontend origin; use `credentials: true` if cookies.         |
+|                                   | Cookie parser                  | ✅ Have     | Needed for JWT in cookies.                                                   |
+|                                   | Input validation               | ✅ Have     | Validate every route and payload.                                            |
+|                                   | Rate limiting                  | ⛔ Need     | `express-rate-limit`; stricter on `/login`, `/signup`, `/forgot-password`.   |
+|                                   | CSRF protection                | ⛔ Need     | Use `csurf` if JWT is in cookies; prevents cross-site attacks.               |
+|                                   | Secure cookie flags            | ⛔ Need     | `httpOnly`, `secure`, `sameSite=Strict`.                                     |
+|                                   | Request size limiting          | ⛔ Need     | `express.json({ limit: "100kb" })` to prevent large payload attacks.         |
+|                                   | HPP (HTTP Parameter Pollution) | ⚪ Optional | `npm install hpp`; protects against duplicate query parameters.              |
+|                                   | Compression                    | ⚪ Optional | `compression()` to reduce JSON response size.                                |
+|                                   | Timeout protection             | ⚪ Optional | Use `connect-timeout` or Node’s built-in timeouts to avoid hanging requests. |
+| **Authentication & JWT**          | Password hashing               | ✅ Have     | `bcrypt` or `argon2`, cost factor ≥12.                                       |
+|                                   | JWT verification               | ✅ Have     | Verify signature, expiration, user exists; optional issuer/audience.         |
+|                                   | Frontend JWT advice            | ⛔ Need     | **Don’t store JWT in localStorage**; cookies + CSRF is safer.                |
+| **Database (MySQL / Laragon)**    | Parameterized queries / ORM    | ✅ Have     | Prevent SQL injection. Use `mysql2`, `Prisma`, `Sequelize`, or `TypeORM`.    |
+|                                   | Connection pooling             | ✅ Have     | Improves performance with multiple simultaneous requests.                    |
+|                                   | Error handling                 | ⛔ Need     | Catch DB errors; never leak details to clients.                              |
+| **Error handling & logging**      | Centralized error handler      | ⛔ Need     | Single handler, no stack traces in prod, consistent JSON responses.          |
+|                                   | Logging / Monitoring           | ⛔ Need     | `pino` or `winston`; optional Sentry for errors/tracking.                    |
+| **Caching / Performance**         | Redis / DB caching             | ⚪ Optional | For expensive queries; improves response times.                              |
+|                                   | CDN caching                    | ⚪ Optional | For public static assets (images, product catalog, blog posts).              |
