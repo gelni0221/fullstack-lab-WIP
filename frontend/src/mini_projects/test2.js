@@ -1,5 +1,5 @@
 import {createPortal} from 'react-dom';
-import {useState, Suspense} from 'react';
+import {useState, Suspense, useEffect} from 'react';
 
 const Modal = ({isOpen, onClose, children}) =>{
     if (!isOpen) return null;
@@ -66,3 +66,25 @@ return(
     </div>
 );
 };
+
+export const UseEffectTimeout = () =>{
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setCount((count) => count + 1);
+        }, 1000);
+    }, []);
+
+    return(
+
+        <h1>COUNTER: {count}</h1>
+
+    );
+};
+
+export const Counter = () => {
+    return(
+        <></>
+    );
+}
