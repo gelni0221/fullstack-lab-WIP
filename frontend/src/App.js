@@ -3,7 +3,7 @@
 import {Register} from './pages/Register';
 import {UseEffectTimeout} from './mini_projects/test2.js';
 const App = () =>{
-return <UseEffectTimeout />;
+return <Register />;
 };
 
 export default App;
