@@ -5,6 +5,7 @@ import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 import userRoutes from './routes/userRoutes.js'; 
+import authRoutes from './routes/authRoutes.js';
 dotenv.config();
 const app = express();
 
@@ -37,7 +38,7 @@ app.use(morgan('combined'));
 //   next();
 // });
 app.use('/user', userRoutes);
-
+app.use('auth', authRoutes);
 
 app.listen(NODE_PORT, () => {
     console.log(`Listening in http://localhost:${NODE_PORT}`);

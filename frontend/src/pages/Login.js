@@ -1,9 +1,10 @@
 import './Login.css'
 import {useState} from 'react';
+const URL = process.env.REACT_APP_API_URL
 
 export const Login = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
 
     const handleUsernameChange = (e) => {
         const value = e.target.value;
@@ -14,8 +15,8 @@ export const Login = () => {
         setPassword(value)
     }
 
-    const handleSubmit = () => {
-        
+    const handleSubmit = async (e) => {
+        e.preventDefault();
     }
 
     return(
@@ -24,12 +25,12 @@ export const Login = () => {
 
             </div>
             <div className="side_container">
-            <form className='login_form'>
+            <form className='login_form' onSubmit={handleSubmit}>
                 <input type='text' placeholder='Username' className="input_login" value={username} onChange={handleUsernameChange}></input>
-                <input type='text' placeholder='Password' className="input_login" value={password} onChange={handlePasswordChange}></input>
-                <button className="button_login">Login</button>
+                <input type='password' placeholder='Password' className="input_login" value={password} onChange={handlePasswordChange}></input>
+                <button className="button_login" type='submit'>Login</button>
                 <a href="">Forgot Password?</a>
-                <button className="button_create_account">Create new Account</button>
+                <button className="button_create_account" type='button'>Create new Account</button>
             </form>
             </div>
         </div>
