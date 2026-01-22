@@ -1,10 +1,10 @@
 import express from 'express';
+import {login, authenticate} from '../middlewares/authMiddlewares.js';
 const router = express.Router();
 
-router.post('api/v1/auth/login', async (req,res) => {});
-
-router.post('api/v1/auth/logout', async (req,res) => {});
-router.post('api/v1/auth/forgotpassword', async (req,res) => {});
+router.post('/api/v1/login', login, async (req,res) => {});
+router.post('/api/v1/logout', authenticate, async (req,res) => {});
+router.post('/api/v1/forgotpassword', async (req,res) => {});
 
 export default router;
 

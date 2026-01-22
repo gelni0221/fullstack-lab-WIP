@@ -17,7 +17,20 @@ export const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-    }
+        const response = await fetch(`${URL}/auth/api/v1/login`,{
+        method: 'POST',
+        headers: {'Content-type': 'application/json'},
+        credentials: 'include',
+        body: JSON.stringify({username, password})
+        });
+        const data = await response.json();
+        if(response.ok){
+        console.log("Login Successful", data)
+        }
+        else{
+        console.log("Login Failed", data.error)
+        }
+    };
 
     return(
         <div className="container">
