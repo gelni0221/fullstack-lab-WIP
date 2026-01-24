@@ -1,5 +1,6 @@
-import './Login.css'
+import './Login.css';
 import {useState} from 'react';
+import {Link} from 'react-router-dom';
 const URL = process.env.REACT_APP_API_URL
 
 export const Login = () => {
@@ -43,7 +44,9 @@ export const Login = () => {
                 <input type='password' placeholder='Password' className="input_login" value={password} onChange={handlePasswordChange}></input>
                 <button className="button_login" type='submit'>Login</button>
                 <a href="">Forgot Password?</a>
-                <button className="button_create_account" type='button'>Create new Account</button>
+                <Link to="/register" className="button_create_account">
+                Create new Account
+                </Link>
             </form>
             </div>
         </div>

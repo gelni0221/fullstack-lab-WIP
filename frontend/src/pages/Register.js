@@ -1,6 +1,7 @@
 import {useState, useEffect, useMemo} from 'react';
-import './Register.css'
-import {DateOfBirthSelector} from '../components/DOB_Selector.js'
+import {Link} from 'react-router-dom';
+import './Register.css';
+import {DateOfBirthSelector} from '../components/DOB_Selector.js';
 const URL = process.env.REACT_APP_API_URL
 
 export const Register = () =>{
@@ -133,7 +134,7 @@ const combined = useMemo(() => {
           />
         </label>
         <button className="form_submit" type="submit">Sign Up</button>
-        <a href="">Already have an account?</a>
+        <Link to='/login'>Already have an account?</Link>
     </div>
     </div>
     </form>
